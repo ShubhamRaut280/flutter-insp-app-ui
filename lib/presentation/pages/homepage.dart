@@ -47,9 +47,9 @@ class Homepage extends StatelessWidget {
                     Text(
                       'Inspiration',
                       style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.black87,
-                      ),
+                          fontSize: 40,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 10,
@@ -71,7 +71,7 @@ class Homepage extends StatelessWidget {
                           hintText: "Search you're looking for",
                           hintStyle: TextStyle(
                             color: Colors.grey,
-                            fontSize: 15,
+                            fontSize: 17,
                           ),
                         ),
                       ),
@@ -109,6 +109,45 @@ class Homepage extends StatelessWidget {
                           promocard('assets/images/four.jpg'),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/three.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: LinearGradient(
+                              stops: [0.1, 0.9],
+                              begin: Alignment.bottomRight,
+                              colors: [
+                                Colors.black.withOpacity(0.8),
+                                Colors.black.withOpacity(0.1),
+                              ],
+                            )),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 20, bottom: 10),
+                            child: Text(
+                              'Best Deals',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -120,7 +159,7 @@ class Homepage extends StatelessWidget {
 
   Widget promocard(image) {
     return AspectRatio(
-      aspectRatio: 2.8 / 3,
+      aspectRatio: 2.78 / 3,
       child: Container(
         margin: EdgeInsets.only(right: 20),
         decoration: BoxDecoration(

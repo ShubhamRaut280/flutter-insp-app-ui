@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
+          fontFamily: 'Roboto',
         ),
         home: Homepage());
   }
