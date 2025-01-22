@@ -82,17 +82,67 @@ class Homepage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Column(
-                children: [
-                  Text(
-                    textAlign: TextAlign.start,
-                    'Promo Today',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        textAlign: TextAlign.start,
+                        'Promo Today',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          promocard('assets/images/one.jpg'),
+                          promocard('assets/images/two.jpg'),
+                          promocard('assets/images/three.jpg'),
+                          promocard('assets/images/four.jpg'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
         ));
+  }
+
+  Widget promocard(image) {
+    return AspectRatio(
+      aspectRatio: 2.8 / 3,
+      child: Container(
+        margin: EdgeInsets.only(right: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                stops: [0.1, 0.9],
+                begin: Alignment.bottomRight,
+                colors: [
+                  Colors.black.withOpacity(0.8),
+                  Colors.black.withOpacity(0.1),
+                ],
+              )),
+        ),
+      ),
+    );
   }
 }
